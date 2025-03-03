@@ -6,11 +6,11 @@
 -- vim.cmd("language en_US.UTF-8")
 
 -- Устанавливаем размер табуляции (например, 2 пробела)
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-
--- Включаем использование пробелов вместо табуляции
-vim.opt.expandtab = true
+-- vim.opt.tabstop = 2
+-- vim.opt.shiftwidth = 2
+-- vim.opt.softtabstop = 2
+--
+-- -- Включаем использование пробелов вместо табуляции
+-- vim.opt.expandtab = true
 
 require("config.lazy")
