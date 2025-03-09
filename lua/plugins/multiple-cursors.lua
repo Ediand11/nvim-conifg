@@ -1,4 +1,5 @@
--- return {
---   "terryma/vim-multiple-cursors",
---   event = "VeryLazy",
--- }
+return {
+  "terryma/vim-multiple-cursors",
+  event = "VeryLazy",
+  enabled = false,
+}
