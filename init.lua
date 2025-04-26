@@ -13,4 +13,5 @@
 -- -- Включаем использование пробелов вместо табуляции
 -- vim.opt.expandtab = true
 
+vim.opt.spell = false
 require("config.lazy")
