@@ -27,3 +27,11 @@ end
 vim.keymap.set("i", "<C-M-Right>", function()
   require("blink.cmp").show()
 end, { desc = "Принудительно открыть автодополнение (blink.cmp)" })
+
+-- ToggleTerm: открыть/закрыть терминал по Cmd+J
+if not vim.g.vscode then
+  local opts = { noremap = true, silent = true, desc = "Toggle terminal (Cmd+J)" }
+  vim.keymap.set("n", "<C-j>", "<cmd>ToggleTerm<cr>", opts)
+  -- в режиме терминала тоже удобно закрывать/переключать
+  vim.keymap.set("t", "<C-j>", [[<C-\><C-n><cmd>ToggleTerm<cr>]], { noremap = true, silent = true })
+end
