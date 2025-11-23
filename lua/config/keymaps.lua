@@ -42,4 +42,9 @@ if not vim.g.vscode then
   vim.keymap.set("n", "<D-S-Down>", ":m .+1<CR>==", { desc = "Move line down" })
   vim.keymap.set("v", "<D-S-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
   vim.keymap.set("v", "<D-S-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+
+	vim.keymap.set({ "n", "i", "v" }, "<D-s>", function()
+		vim.cmd("silent! w")
+		vim.cmd("silent! Format")
+	end, { desc = "Save & Format" })
 end
