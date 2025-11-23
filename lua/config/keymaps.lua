@@ -31,15 +31,15 @@ end, { desc = "Принудительно открыть автодополне�
 -- ToggleTerm: открыть/закрыть терминал по Cmd+J
 if not vim.g.vscode then
   local opts = { noremap = true, silent = true, desc = "Toggle terminal (Cmd+J)" }
-  vim.keymap.set("n", "<C-j>", "<cmd>ToggleTerm<cr>", opts)
+  vim.keymap.set("n", "<D-j>", "<cmd>ToggleTerm<cr>", opts)
   -- в режиме терминала тоже удобно закрывать/переключать
-  vim.keymap.set("t", "<C-j>", [[<C-\><C-n><cmd>ToggleTerm<cr>]], { noremap = true, silent = true })
+  vim.keymap.set("t", "<D-j>", [[<C-\><C-n><cmd>ToggleTerm<cr>]], { noremap = true, silent = true })
 end
 
 -- Перемещение сторок вврех/вниз 
 if not vim.g.vscode then
-  vim.keymap.set("n", "<C-S-Up>", ":m .-2<CR>==", { desc = "Move line up" })
-  vim.keymap.set("n", "<C-S-Down>", ":m .+1<CR>==", { desc = "Move line down" })
-  vim.keymap.set("v", "<C-S-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
-  vim.keymap.set("v", "<C-S-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+  vim.keymap.set("n", "<D-S-Up>", ":m .-2<CR>==", { desc = "Move line up" })
+  vim.keymap.set("n", "<D-S-Down>", ":m .+1<CR>==", { desc = "Move line down" })
+  vim.keymap.set("v", "<D-S-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+  vim.keymap.set("v", "<D-S-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 end
