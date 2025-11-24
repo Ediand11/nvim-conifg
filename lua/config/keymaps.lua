@@ -48,3 +48,27 @@ if not vim.g.vscode then
 		vim.cmd("silent! Format")
 	end, { desc = "Save & Format" })
 end
+
+-- WebOS плагин keymaps
+if not vim.g.vscode then
+  local webos = require("plugins.webos")
+  
+  -- Открыть модальное окно WebOS
+  vim.keymap.set("n", "<leader>wo", function() webos.open() end, { desc = "WebOS: Открыть меню" })
+  
+  -- Быстрые команды (используют устройство по умолчанию)
+  vim.keymap.set("n", "<leader>wi", function() webos.install() end, { desc = "WebOS: Установить приложение" })
+  vim.keymap.set("n", "<leader>wr", function() webos.install_and_run() end, { desc = "WebOS: Установить и запустить" })
+  vim.keymap.set("n", "<leader>wd", function() webos.inspect() end, { desc = "WebOS: Инспектировать" })
+  vim.keymap.set("n", "<leader>wc", function() webos.connect() end, { desc = "WebOS: Подключиться (novacom)" })
+  
+  -- Управление устройствами
+  vim.keymap.set("n", "<leader>wf", function() webos.refresh_devices() end, { desc = "WebOS: Обновить список устройств" })
+  vim.keymap.set("n", "<leader>wp", function() webos.set_default_device() end, { desc = "WebOS: Установить устройство по умолчанию" })
+  
+  -- Команды для конкретного устройства
+  vim.keymap.set("n", "<leader>wI", function() webos.install_to_device() end, { desc = "WebOS: Установить на устройство" })
+  vim.keymap.set("n", "<leader>wT", function() webos.install_and_run_to_device() end, { desc = "WebOS: Установить и запустить на устройстве" })
+  vim.keymap.set("n", "<leader>wD", function() webos.inspect_device() end, { desc = "WebOS: Инспектировать устройство" })
+  vim.keymap.set("n", "<leader>wC", function() webos.connect_to_device() end, { desc = "WebOS: Подключиться к устройству" })
+end
