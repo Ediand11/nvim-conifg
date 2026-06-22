@@ -7,3 +7,8 @@
 vim.opt.expandtab = false
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
+
+vim.opt.wrap = true
+vim.opt.linebreak = true
+
+vim.g.maplocalleader = ","
